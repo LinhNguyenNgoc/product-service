@@ -1,0 +1,64 @@
+### 1. CREATE - Tạo sản phẩm 1: Điện thoại
+POST http://localhost:8081/api/products
+Content-Type: application/json
+
+{
+  "name": "iPhone 15 Pro",
+  "price": 999.00,
+  "quantity": 50
+}
+
+### 2. CREATE - Tạo sản phẩm 2: Laptop
+POST http://localhost:8081/api/products
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro M3",
+  "price": 1999.00,
+  "quantity": 20
+}
+
+### 3. CREATE - Tạo sản phẩm 3: Phụ kiện
+POST http://localhost:8081/api/products
+Content-Type: application/json
+
+{
+  "name": "AirPods Pro 2",
+  "price": 249.00,
+  "quantity": 100
+}
+
+
+### 4. READ - Lấy danh sách tất cả sản phẩm
+GET http://localhost:8081/api/products
+
+
+### 5. READ - Lấy chi tiết sản phẩm theo ID (giả sử ID = 1)
+GET http://localhost:8081/api/products/1
+
+
+### 6. UPDATE - Cập nhật sản phẩm có ID = 1
+PUT http://localhost:8081/api/products/1
+Content-Type: application/json
+
+{
+  "name": "iPhone 15 Pro Max",
+  "price": 1199.00,
+  "quantity": 30
+}
+
+
+### 7. DELETE - Xóa sản phẩm có ID = 3
+DELETE http://localhost:8081/api/products/3
+
+
+
+
+# Đăng nhập Docker Hub
+docker login
+
+# Build image
+docker build -t your-dockerhub-username/product-service:latest .
+
+# Push lên Docker Hub
+docker push your-dockerhub-username/product-service:latest
